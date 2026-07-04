@@ -4,28 +4,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="gamepage.css">
-    <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Belanosima&display=swap" rel="stylesheet">
-    <title>Snake Game</title>
+    <script src="https://kit.fontawesome.com/8cd60dbffc.js" crossorigin="anonymous"></script>
+    <meta name="description" content="A whole collection of ugly games.">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>{% block title %} SAM.network {% endblock %}</title>
+    {% block extra_head %}{% endblock %}
 </head>
-
 <body>
-    <header>
+        <header>
         <nav>
             <div class="navbar-left">
-                <a class="navbar-brand" href="index.html"><h2>SAM.network</h2></a>
+                <a class="navbar-brand" href="{{ url_for('index') }}"><h2>SAM.network</h2></a>
             </div>
             <div class="navbar-right">
                 <ul class="navbar-list">
                     <li class="navbar-list-item">
-                        <a class="navbar-link navbar-btn" href="index.html#games">Games</a>
+                        <a class="navbar-link navbar-btn" href="{{ url_for('index') }}#games">Games</a>
                     </li>
                     <li class="navbar-list-item">
-                        <a class="navbar-link navbar-btn" href="#">Leaderboard</a>
+                        <a class="navbar-link navbar-btn" href="{{ url_for('leaderboard') }}">Leaderboard</a>
                     </li>
                     <li class="navbar-list-item">
-                        <a class="navbar-link navbar-btn" href="#footer">About</a>
+                        <a class="navbar-link navbar-btn" href="{{ url_for('index') }}#footer">About</a>
                     </li>
                     <li class="navbar-list-item">
                         <div class="navbar-btn-container">
@@ -37,18 +38,15 @@
             </div>
         </nav>
     </header>
-
     <main>
-        <div class="canvas-container">
-            <canvas id="canvas" width="400" height="400"></canvas>
-        </div>
+        {% block content %}{% endblock %}
     </main>
 
-    <footer>
+    <footer id="footer">
         <ul class="contact-me" id="contact-me">
             <li>
                 <h2>My Name</h2>
-                <p>Syed Ali Murtaza</p>             
+                <p>Syed Ali Murtaza Raza</p>             
             </li>
             <li>
                 <h2>Where I live</h2>
@@ -56,7 +54,7 @@
             </li>
             <li>
                 <h2>My Email</h2>
-                <p><a href="mailto:samraza132007@gmail.com">samraza132007@gmail.com</a></p>          
+                <p><a href="mailto:s.alimrtza@gmail.com">s.alimrtza@gmail.com</a></p>          
             </li>
             <li>
                 <h2>Know more about me</h2>
@@ -82,7 +80,9 @@
             <p>Copyright &copy; 2024-2025 by Ali Murtaza. All Rights Reserved. SAM.network is owned by Syed Ali Murtaza Raza</p>
         </div>
     </footer>
-    <script src="gamescripts/snake.js"></script>
-</body>
 
+    <a id="scroll-to-top" href="#">^</a>
+    <script src="top-scroll.js"></script>
+    {% block scripts %} {% endblock %}
+</body>
 </html>

@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="landing-page">
+    <div class="container bg-blue">
+        <h1>SAM.network</h1>
+    </div>
+    <div class="container bg-darkblue">
+        <h2>ENDLESS <span>GAMING</span></h2>
+        <a href="#games" class="btn"><i class="fa-solid fa-gamepad"></i>  Play Now</a>
+        <a href="{{ url_for('leaderboard') }}" class="btn"><i class="fa-solid fa-trophy"></i>  Leaderboard</a>
+    </div>
+</section>
+
+<section id="games">
+    <div class="gallery">
+        {% for slug, game in games.items() %}
+            <div class="container">
+                <a href="{{ url_for('game', slug=slug) }}">
+                    <img src="{{ url_for('static', filename=game['thumbnail']) }}" alt="{{ game['name'] }}">
+                    <span>{{ game['name'] }}</span>
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+</section>
+    
+{% endblock %}
+

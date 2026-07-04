@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %} game_name {% endblock %}
+{% block extra_head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/gamepage.css') }}">
+{% endblock %}
+{% block content %}
+    <main>
+        <div class="canvas-container">
+            <canvas id="canvas" width="400" height="400"></canvas>
+        </div>
+    </main>
+{% endblock %}
+{% block scripts %}
+    <script src="{{ url_for('static', filename=script_file) }}"></script>
+{% endblock %}
