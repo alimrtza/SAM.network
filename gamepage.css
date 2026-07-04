@@ -1,0 +1,15 @@
+/*---------------GAMES----------------- */
+main {
+    background: linear-gradient(#176B87 50%, #001C30 50%);
+}
+.canvas-container {
+    display: flex;
+    justify-content: center; 
+    align-items: center;    
+    height: 90vh;
+    text-align: center; 
+}
+canvas { 
+    position: relative;
+    border: 3px solid antiquewhite;   
+}
