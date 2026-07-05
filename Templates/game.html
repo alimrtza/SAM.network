@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %} game_name {% endblock %}
+{% block title %} {{ game_name }} {% endblock %}
 {% block extra_head %}
     <link rel="stylesheet" href="{{ url_for('static', filename='css/gamepage.css') }}">
 {% endblock %}
@@ -11,5 +11,9 @@
     </main>
 {% endblock %}
 {% block scripts %}
-    <script src="{{ url_for('static', filename=script_file) }}"></script>
+    {% if is_module %}
+        <script type="module" src="{{ url_for('static', filename=script_file) }}"></script>
+    {% else %}
+        <script src="{{ url_for('static', filename=script_file) }}"></script>
+    {% endif %}
 {% endblock %}

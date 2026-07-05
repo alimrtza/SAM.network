@@ -6,7 +6,14 @@ GAMES = {
     "snake" : {
         "name" : "Snake",
         "script" : "js/snake.js",
-        "thumbnail" : "assets/imgs/snake.png"
+        "thumbnail" : "assets/imgs/snake.png",
+        "module" : False
+    },
+    "Flap" : {
+        "name" : "Flap",
+        "script" : "js/flap.js",
+        "thumbnail" : "assets/imgs/snake.png",
+        "module" : True
     }
 }
 
@@ -19,12 +26,7 @@ def game(slug):
     g = GAMES.get(slug)
     if not g:
         abort(404)
-    return render_template("game.html", slug=slug, game_name=g["name"], script_file=g["script"])
-
-@app.route("/leaderboard")
-def leaderboard(): 
-    return render_template("leaderboard.html")
-
+    return render_template("game.html", slug=slug, game_name=g["name"], script_file=g["script"], is_module=g["module"])
 
 if __name__ == "__main__":
     app.run(debug=True)

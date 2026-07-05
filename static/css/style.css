@@ -184,7 +184,7 @@ nav {
     display: grid;
     grid-template-columns: repeat(auto-fill, 300px);
     justify-content: center;
-    gap: 2rem;
+    gap: 1rem;
     margin: 7rem auto 0 auto;
     padding: 0 2rem;
     max-width: 1400px;
@@ -321,6 +321,7 @@ footer {
   font-weight: bolder;
   font-size: 2.5rem;
   text-align: center;
+  user-select: none;
   
   z-index: 9999; 
   position: fixed;

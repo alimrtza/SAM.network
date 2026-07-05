@@ -13,7 +13,7 @@ function drawGame(){
     clearScreen();
     apple.draw();
     player.draw("blue");
-    Snake();
+    Snake();    
     collide();
     drawScore();
     difficulty();    

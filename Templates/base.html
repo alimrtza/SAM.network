@@ -23,9 +23,6 @@
                         <a class="navbar-link navbar-btn" href="{{ url_for('index') }}#games">Games</a>
                     </li>
                     <li class="navbar-list-item">
-                        <a class="navbar-link navbar-btn" href="{{ url_for('leaderboard') }}">Leaderboard</a>
-                    </li>
-                    <li class="navbar-list-item">
                         <a class="navbar-link navbar-btn" href="{{ url_for('index') }}#footer">About</a>
                     </li>
                     <li class="navbar-list-item">
@@ -82,7 +79,7 @@
     </footer>
 
     <a id="scroll-to-top" href="#">^</a>
-    <script src="top-scroll.js"></script>
+    <script src="{{ url_for('static', filename='js/top-scroll.js') }}"></script>
     {% block scripts %} {% endblock %}
 </body>
 </html>
