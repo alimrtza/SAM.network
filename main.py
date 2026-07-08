@@ -6,13 +6,13 @@ GAMES = {
     "snake" : {
         "name" : "Snake",
         "script" : "js/snake.js",
-        "thumbnail" : "assets/imgs/snake.png",
+        "thumbnail" : "assets/images/snake.png",
         "module" : False
     },
     "Flap" : {
         "name" : "Flap",
         "script" : "js/flap.js",
-        "thumbnail" : "assets/imgs/snake.png",
+        "thumbnail" : "assets/images/snake.png",
         "module" : True
     }
 }
