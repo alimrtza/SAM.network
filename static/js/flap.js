@@ -1,10 +1,10 @@
-// fix the pipe height code
-// destroy pipes when they go off screen
-// empty pipe array when game restarts
-// arrange the code game
-
-
 import kaboom from "./kaboom.js";
+
+// Intialisation
+let pipes = [];
+let score = 0;
+let groundHeight = 48;
+let pipeSpawnInterval = 1.5; // seconds
 
 kaboom({
     canvas: document.getElementById("canvas"),
@@ -15,11 +15,6 @@ kaboom({
     background: [135, 206, 235],
     global: true,
 });
-
-let pipes = [];
-let score = 0;
-let groundHeight = 48;
-let pipeSpawnInterval = 1.5; // seconds
 
 function spawnPipe() {
     const totalPipeHeight = height() - groundHeight;
@@ -73,7 +68,7 @@ function destroyPipe() {
 
 scene ("menu", () => {
     add([
-            text("Press Space to Start", { size: 24 }),
+            text("Tap or press space to start", { size: 24 }),
             pos(width() / 2, height() / 2),
             color(255, 255, 255),
             anchor("center"),
